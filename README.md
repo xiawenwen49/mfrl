@@ -37,7 +37,7 @@ Before running Battle Game environment, you need to compile it. You can get more
 
 ```shell
 sudo apt-get install libwebsocketpp-dev
-sudo apt-get install json??
+sudo apt-get install json???
 
 cd examples/battle_model
 ./build.sh
