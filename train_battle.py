@@ -51,7 +51,7 @@ if __name__ == '__main__':
     tf_config = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)
     tf_config.gpu_options.allow_growth = True
 
-    log_dir = os.path.join(BASE_DIR,'data/tmp'.format(args.algo))
+    log_dir = os.path.join(BASE_DIR,'data/tmp/{}'.format(args.algo))
     model_dir = os.path.join(BASE_DIR, 'data/models/{}'.format(args.algo))
 
     if args.algo in ['mfq', 'mfac']:
