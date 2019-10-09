@@ -358,10 +358,10 @@ class Runner(object):
             assert self.models[0].name_scope != self.models[1].name_scope
             self.sess = sess
 
-            l_vars, r_vars = self.models[0].vars, self.models[1].vars
+            l_vars, r_vars = self.models[0].vars, self.models[1].vars # model[1] is the target model
             assert len(l_vars) == len(r_vars)
             self.sp_op = [tf.assign(r_vars[i], (1. - tau) * l_vars[i] + tau * r_vars[i])
-                                for i in range(len(l_vars))]
+                                for i in range(len(l_vars))] # update -> target model
 
             if not os.path.exists(self.model_dir):
                 os.makedirs(self.model_dir)
